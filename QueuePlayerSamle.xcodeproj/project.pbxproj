@@ -12,6 +12,8 @@
 		D78FB7F91C0C4D6C00E6EFD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78FB7F71C0C4D6C00E6EFD3 /* Main.storyboard */; };
 		D78FB7FB1C0C4D6C00E6EFD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78FB7FA1C0C4D6C00E6EFD3 /* Assets.xcassets */; };
 		D78FB7FE1C0C4D6C00E6EFD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78FB7FC1C0C4D6C00E6EFD3 /* LaunchScreen.storyboard */; };
+		D78FB8061C0C4DB700E6EFD3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78FB8051C0C4DB700E6EFD3 /* AVFoundation.framework */; };
+		D78FB8091C0C5AEA00E6EFD3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78FB8081C0C5AEA00E6EFD3 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		D78FB7FA1C0C4D6C00E6EFD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D78FB7FD1C0C4D6C00E6EFD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D78FB7FF1C0C4D6C00E6EFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D78FB8051C0C4DB700E6EFD3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D78FB8081C0C5AEA00E6EFD3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D78FB8091C0C5AEA00E6EFD3 /* MediaPlayer.framework in Frameworks */,
+				D78FB8061C0C4DB700E6EFD3 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +44,8 @@
 		D78FB7E71C0C4D6C00E6EFD3 = {
 			isa = PBXGroup;
 			children = (
+				D78FB8081C0C5AEA00E6EFD3 /* MediaPlayer.framework */,
+				D78FB8051C0C4DB700E6EFD3 /* AVFoundation.framework */,
 				D78FB7F21C0C4D6C00E6EFD3 /* QueuePlayerSamle */,
 				D78FB7F11C0C4D6C00E6EFD3 /* Products */,
 			);
@@ -96,7 +104,6 @@
 				TargetAttributes = {
 					D78FB7EF1C0C4D6C00E6EFD3 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = ETFKU52LQ6;
 					};
 				};
 			};
@@ -248,7 +255,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = QueuePlayerSamle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.denis2015.QueuePlayerSamle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -259,7 +268,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = QueuePlayerSamle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.denis2015.QueuePlayerSamle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
