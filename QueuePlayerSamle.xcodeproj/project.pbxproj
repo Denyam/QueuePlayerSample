@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39AE485C1C0D02EE00352A6F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39AE485B1C0D02EE00352A6F /* CoreData.framework */; };
+		39AE488B1C0DB9C700352A6F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39AE48891C0DB9C700352A6F /* Model.xcdatamodeld */; };
+		39AE48931C0DBA2E00352A6F /* PlayerItemMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE48901C0DBA2E00352A6F /* PlayerItemMO+CoreDataProperties.m */; };
+		39AE48941C0DBA2E00352A6F /* PlayerItemMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE48921C0DBA2E00352A6F /* PlayerItemMO.m */; };
+		39AE489A1C0DF65700352A6F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE48991C0DF65700352A6F /* PlayerViewController.m */; };
+		39AE489E1C0DF90600352A6F /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AE489D1C0DF90600352A6F /* PlayerView.m */; };
 		D78FB7F41C0C4D6C00E6EFD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FB7F31C0C4D6C00E6EFD3 /* AppDelegate.swift */; };
 		D78FB7F61C0C4D6C00E6EFD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78FB7F51C0C4D6C00E6EFD3 /* ViewController.swift */; };
 		D78FB7F91C0C4D6C00E6EFD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78FB7F71C0C4D6C00E6EFD3 /* Main.storyboard */; };
@@ -17,6 +23,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39AE485B1C0D02EE00352A6F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		39AE48851C0DB59C00352A6F /* QueuePlayerSamle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueuePlayerSamle-Bridging-Header.h"; sourceTree = "<group>"; };
+		39AE488A1C0DB9C700352A6F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		39AE488F1C0DBA2E00352A6F /* PlayerItemMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PlayerItemMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		39AE48901C0DBA2E00352A6F /* PlayerItemMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PlayerItemMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		39AE48911C0DBA2E00352A6F /* PlayerItemMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerItemMO.h; sourceTree = "<group>"; };
+		39AE48921C0DBA2E00352A6F /* PlayerItemMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerItemMO.m; sourceTree = "<group>"; };
+		39AE48981C0DF65700352A6F /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		39AE48991C0DF65700352A6F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		39AE489C1C0DF90600352A6F /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		39AE489D1C0DF90600352A6F /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		D78FB7F01C0C4D6C00E6EFD3 /* QueuePlayerSamle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueuePlayerSamle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D78FB7F31C0C4D6C00E6EFD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D78FB7F51C0C4D6C00E6EFD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AE485C1C0D02EE00352A6F /* CoreData.framework in Frameworks */,
 				D78FB8091C0C5AEA00E6EFD3 /* MediaPlayer.framework in Frameworks */,
 				D78FB8061C0C4DB700E6EFD3 /* AVFoundation.framework in Frameworks */,
 			);
@@ -41,12 +59,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39AE485D1C0D02F300352A6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39AE485B1C0D02EE00352A6F /* CoreData.framework */,
+				D78FB8081C0C5AEA00E6EFD3 /* MediaPlayer.framework */,
+				D78FB8051C0C4DB700E6EFD3 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39AE48841C0DB55E00352A6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39AE48891C0DB9C700352A6F /* Model.xcdatamodeld */,
+				39AE488F1C0DBA2E00352A6F /* PlayerItemMO+CoreDataProperties.h */,
+				39AE48901C0DBA2E00352A6F /* PlayerItemMO+CoreDataProperties.m */,
+				39AE48911C0DBA2E00352A6F /* PlayerItemMO.h */,
+				39AE48921C0DBA2E00352A6F /* PlayerItemMO.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		39AE489B1C0DF8D900352A6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				39AE489C1C0DF90600352A6F /* PlayerView.h */,
+				39AE489D1C0DF90600352A6F /* PlayerView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D78FB7E71C0C4D6C00E6EFD3 = {
 			isa = PBXGroup;
 			children = (
-				D78FB8081C0C5AEA00E6EFD3 /* MediaPlayer.framework */,
-				D78FB8051C0C4DB700E6EFD3 /* AVFoundation.framework */,
 				D78FB7F21C0C4D6C00E6EFD3 /* QueuePlayerSamle */,
+				39AE485D1C0D02F300352A6F /* Frameworks */,
 				D78FB7F11C0C4D6C00E6EFD3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,12 +110,17 @@
 		D78FB7F21C0C4D6C00E6EFD3 /* QueuePlayerSamle */ = {
 			isa = PBXGroup;
 			children = (
+				39AE489B1C0DF8D900352A6F /* View */,
+				39AE48841C0DB55E00352A6F /* Model */,
 				D78FB7F31C0C4D6C00E6EFD3 /* AppDelegate.swift */,
 				D78FB7F51C0C4D6C00E6EFD3 /* ViewController.swift */,
+				39AE48851C0DB59C00352A6F /* QueuePlayerSamle-Bridging-Header.h */,
 				D78FB7F71C0C4D6C00E6EFD3 /* Main.storyboard */,
 				D78FB7FA1C0C4D6C00E6EFD3 /* Assets.xcassets */,
 				D78FB7FC1C0C4D6C00E6EFD3 /* LaunchScreen.storyboard */,
 				D78FB7FF1C0C4D6C00E6EFD3 /* Info.plist */,
+				39AE48981C0DF65700352A6F /* PlayerViewController.h */,
+				39AE48991C0DF65700352A6F /* PlayerViewController.m */,
 			);
 			path = QueuePlayerSamle;
 			sourceTree = "<group>";
@@ -104,6 +157,7 @@
 				TargetAttributes = {
 					D78FB7EF1C0C4D6C00E6EFD3 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = ETFKU52LQ6;
 					};
 				};
 			};
@@ -144,7 +198,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D78FB7F61C0C4D6C00E6EFD3 /* ViewController.swift in Sources */,
+				39AE489E1C0DF90600352A6F /* PlayerView.m in Sources */,
+				39AE48931C0DBA2E00352A6F /* PlayerItemMO+CoreDataProperties.m in Sources */,
+				39AE48941C0DBA2E00352A6F /* PlayerItemMO.m in Sources */,
 				D78FB7F41C0C4D6C00E6EFD3 /* AppDelegate.swift in Sources */,
+				39AE488B1C0DB9C700352A6F /* Model.xcdatamodeld in Sources */,
+				39AE489A1C0DF65700352A6F /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,12 +314,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = QueuePlayerSamle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.denis2015.QueuePlayerSamle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QueuePlayerSamle/QueuePlayerSamle-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -268,12 +330,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = QueuePlayerSamle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.denis2015.QueuePlayerSamle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QueuePlayerSamle/QueuePlayerSamle-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -296,8 +360,22 @@
 				D78FB8041C0C4D6C00E6EFD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		39AE48891C0DB9C700352A6F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				39AE488A1C0DB9C700352A6F /* Model.xcdatamodel */,
+			);
+			currentVersion = 39AE488A1C0DB9C700352A6F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D78FB7E81C0C4D6C00E6EFD3 /* Project object */;
 }

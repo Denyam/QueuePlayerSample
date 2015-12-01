@@ -3,10 +3,11 @@
 //  QueuePlayerSamle
 //
 //  Created by Denis Melenevsky on 30/11/15.
-//  Copyright © 2015 Denis Melenevsky. All rights reserved.
+//  Copyright © 2015 Denis Melenevsky. Some rights reserved.
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,28 +20,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-
     func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+		if self.managedObjectContext.hasChanges {
+			do {
+				try self.managedObjectContext.save()
+			} catch {
+				print("Error saving data:", error)
+			}
+		}
     }
+	
 
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
+	lazy var managedObjectContext: NSManagedObjectContext = {
+		let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+		context.persistentStoreCoordinator = self.persistentStoreCoordinator
+		return context
+	}()
 
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
+	lazy var managedObjectModel: NSManagedObjectModel = {
+		let modelUrl = NSBundle.mainBundle().URLForResource("Model", withExtension: "momd")
+		let model = NSManagedObjectModel(contentsOfURL: modelUrl!)!
+		return model
+	}()
+	
+	lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+		let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+		let storeUrl = self.applicationDocumentsDirectory().URLByAppendingPathComponent("Model.sqlite")
+		
+		do {
+			try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeUrl, options: nil)
+		} catch {
+			print("Error: ", error);
+			do {
+				try NSFileManager.defaultManager().removeItemAtURL(storeUrl)
+				try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeUrl, options: nil)
+			} catch let anotherError {
+				print("Error: ", anotherError);
+			}
+		}
+		
+		return coordinator
+	}()
+	
+	func applicationDocumentsDirectory() -> NSURL {
+		return NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).first!
+	}
+	
+	func saveContext() {
+		if self.managedObjectContext.hasChanges {
+			do {
+				try self.managedObjectContext.save()
+			} catch let error {
+				print("Error: ", error)
+			}
+		}
+	}
 }
 
